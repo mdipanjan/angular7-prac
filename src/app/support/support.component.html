@@ -1,0 +1,39 @@
+<table class="table container mt-4">
+  <thead>
+    <tr >
+      <th>Name</th>
+      <th>Age</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let support of supports; let index = index; let oddRecords = odd; let evenRecords = even" [ngClass]="{odd:oddRecords, even:evenRecords}">
+      <td>{{index + 1}}</td>
+      <td>{{support.name}}</td>
+      <td>{{support.age}}</td>
+      <td>{{support.email}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div class="container mt-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <td>Sr No.</td>
+        <td>Name</td>
+        <td>Username</td>
+        <td>Email</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let odd = odd; let even = even" [ngClass]="{odd:odd, even:even}">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,13 @@
+.not-found{
+  height: 90vh;
+  width: 100vw;
+}
+.not-found-box{
+  height: 80vh;
+  width: 80vw;
+  /* background-color: aqua; */
+}
+img{
+  height: 100%;
+  width: 100%;
+}

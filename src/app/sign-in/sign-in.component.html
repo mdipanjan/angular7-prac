@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="card col-sm-4  offset-sm-4">
+      <div class="card-body p-4">
+        <form [formGroup]="signInForm" class="">
+          <div class="form-group pt-4">
+            <label for="exampleInputEmail1">Email address</label>
+            <input formControlName='email' type="email" class="form-control py-4 border-top-0  border-left-0 border-right-0 border-warning" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <!-- <small>Email is required</small> -->
+          </div>
+          <div class="form-group">
+            <label for="">Password</label>
+            <input formControlName='password' type="password" class="form-control py-4 border-top-0  border-left-0 border-right-0 border-warning" id="1" placeholder="Password">
+          </div>
+          
+          <!-- <small *ngIf="f.password.errors.minlength">Password must be 6 characters long</small> -->
+          <div class="form-group">
+            <label for="">Confirm Password</label>
+            <input formControlName='cnPassword' type="password" class="form-control py-4 border-top-0  border-left-0 border-right-0 border-warning" id="2" placeholder="Confirm Password">
+          </div>
+          <small *ngIf="signInForm.get('cnPassword')?.errors?.notSame">Both passwords should be same</small>
+          <small *ngIf="errorMessage.errorMsg !== 0" class="text-danger">Both passwords should be same</small>
+          <div class="form-check pt-1">
+            <input formControlName='checkbox' type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">I agree to the terms and conditions</label>
+          </div>
+          <a  routerLink="/log-in" class="ml-5">already have an account?</a>
+          <div class="d-flex flex-row justify-content-center mb-4">
+            <button type="submit" class="btn btn-outline-warning btn-lg btn-block mt-4" [disabled]="signInForm.invalid" (click)="onSubmit()">Submit</button>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
